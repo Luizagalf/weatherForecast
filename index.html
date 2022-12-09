@@ -11,7 +11,11 @@
 		<div class="container">
 			<div class="forecast">
 				<h2 class="forecast__title">Weather</h2>
-				<form class="forecast__form">
+				<form
+					class="forecast__form"
+					onsubmit="event.preventDefault();
+		getWetherForecast();"
+				>
 					<input type="text" name="city" placeholder="City" autocomplete="off" class="forecast__input" id="input" />
 					<input type="submit" class="forecast__button" value="Search" id="getWeather" />
 				</form>

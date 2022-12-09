@@ -1,5 +1,5 @@
-const key = "&appid=77563d0b85ff6645fb4a1ff6cd388c22";
-const baseURL = "http://api.openweathermap.org/data/2.5/weather?q=";
+const key = "77563d0b85ff6645fb4a1ff6cd388c22";
+const baseURL = `http://api.openweathermap.org/data/2.5/weather?appid=${key}&q=`;
 
 const getDayIcon = () => {
 	let time = new Date().getHours();
@@ -7,16 +7,16 @@ const getDayIcon = () => {
 
 	switch (true) {
 		case time >= 5 && time < 12:
-			mainCard.style.backgroundImage = "url('images/morning.jpg')";
+			mainCard.style.backgroundImage = "url('images/morning.jpeg')";
 			break;
 		case time >= 12 && time < 17:
-			mainCard.style.backgroundImage = "url('images/morning.jpg')";
+			mainCard.style.backgroundImage = "url('images/day.jpg')";
 			break;
 		case time >= 17 && time < 22:
-			mainCard.style.backgroundImage = "url('images/morning.jpg')";
+			mainCard.style.backgroundImage = "url('images/evening.jpg')";
 			break;
 		case time >= 22 && time < 5:
-			mainCard.style.backgroundImage = "url('images/morning.jpg')";
+			mainCard.style.backgroundImage = "url('images/night.jpg')";
 			break;
 	}
 };
@@ -40,7 +40,7 @@ const getWetherForecast = () => {
 	if (document.getElementById("input").value == "") {
 		mainCard.insertAdjacentHTML("afterbegin", `<div class="forecast__card--inner"><p class="forecast__temp">You didn't fill in the field</p></div>`);
 	} else {
-		fetch(baseURL + city + key)
+		fetch(baseURL + city)
 			.then((response) => response.json())
 			.then((weather) => {
 				mainCard.insertAdjacentHTML(
@@ -74,18 +74,10 @@ const getWetherForecast = () => {
 						<p>humidity</p><p>${weather.main.humidity} %</p></div>`
 				);
 			})
-			.catch((error) =>
-				mainCard.insertAdjacentHTML("afterbegin", `<div class="forecast__card--inner"><p class="forecast__temp">Nothing found</p></div>`)
-			);
+			.catch(() => mainCard.insertAdjacentHTML("afterbegin", `<div class="forecast__card--inner"><p class="forecast__temp">Nothing found</p></div>`));
 	}
 };
 
 document.addEventListener("DOMContentLoaded", () => {
 	getDayIcon();
-});
-
-getWeather.addEventListener("click", (event) => {
-	event.preventDefault();
-	s;
-	getWetherForecast();
 });
