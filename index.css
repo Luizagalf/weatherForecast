@@ -1,0 +1,127 @@
+body {
+	margin: 0;
+	height: 100vh;
+	background-color: #fbf6ea;
+	color: #172b69;
+}
+
+input {
+	margin: 0;
+	padding: 0;
+	vertical-align: middle;
+	border: none;
+}
+
+.container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	height: 100vh;
+}
+
+.forecast {
+	display: flex;
+	flex-direction: column;
+	row-gap: 30px;
+	width: 100%;
+	max-width: max-content;
+	height: max-content;
+	padding: 24px;
+	border-radius: 6px;
+	background-color: #eadfd5;
+	box-shadow: 0 0.5em 1em -0.125em rgb(10 10 10 / 10%), 0 0 0 1px rgb(10 10 10 / 2%);
+}
+
+.forecast__title {
+	margin: 0;
+	color: #172b69;
+}
+
+.forecast__form {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 20px;
+}
+
+.forecast__input {
+	border-radius: 10px;
+	outline: 2px solid #bfd1db;
+	color: #172b69;
+	height: 18px;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 20px;
+	padding: 12px 18px;
+	width: 100%;
+	max-width: 150px;
+}
+
+.forecast__input:focus {
+	border: none !important;
+}
+
+.forecast__input::placeholder {
+	color: #bfd1db;
+}
+
+.forecast__input:focus,
+.forecast__input:active,
+.forecast__input:active:focus,
+.forecast__inputput:focus:active,
+.forecast__input:visited {
+	outline: 2px solid #bfd1db;
+}
+
+.forecast__button {
+	border-radius: 10px;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 20px;
+	height: 46px;
+	width: 100%;
+	max-width: 90px;
+	padding: 0px 4px;
+	cursor: pointer;
+	background-color: #bfd1db;
+	color: inherit;
+}
+
+.forecast__button:hover {
+	box-shadow: inset 4px -4px 4px rgba(222, 230, 233, 0.5), inset -4px 4px 4px rgba(222, 230, 233, 0.5);
+}
+
+.forecast__card {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 200px;
+	background-size: cover;
+	background-repeat: no-repeat;
+	border-radius: 6px;
+}
+
+.forecast__card--inner {
+	background: rgba(234, 223, 213, 0.8);
+	border-radius: 6px;
+	width: 180px;
+	padding: 0 10px;
+	font-weight: 400;
+}
+
+.forecast__name {
+	font-size: 18px;
+	line-height: 22px;
+}
+
+.forecast__temp {
+	font-size: 16px;
+	line-height: 20px;
+}
+
+.forecast__row {
+	display: flex;
+	justify-content: space-between;
+	padding: 0 30px;
+}
